@@ -34,7 +34,10 @@ class MainActivity : ComponentActivity() {
             val hours = hoursInput.text.toString().toIntOrNull() ?: 0
             val discount = discountSeekBar.progress
 
-
+            Intent(this, ResultActivity::class.java).apply {
+                putExtra("HOURS", hours)
+                putExtra("DISCOUNT", discount)
+                startActivity(this)
             }
         }
     }
